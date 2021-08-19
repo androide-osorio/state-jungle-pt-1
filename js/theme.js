@@ -1,5 +1,6 @@
 import { themes } from "mdx-deck";
 import produce from "immer";
+import { css } from '@emotion/core'
 import { dracula } from "@code-surfer/themes";
 
 const colors = {
@@ -35,3 +36,16 @@ export const veganDracula = produce(dracula, draft => {
   };
   draft.styles.CodeSurfer.subtitle.backgroundColor = colors.background;
 });
+
+const heroSlide = css`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30vmax;
+`;
+
+export const styles = {
+  heroSlide,
+}

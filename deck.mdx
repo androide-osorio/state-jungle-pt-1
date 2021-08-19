@@ -4,11 +4,84 @@ import {
   Step,
 } from "code-surfer";
 import { SlideLayout, SurferLayout } from "./js/layout";
-import dracula, { veganDracula } from "./js/theme";
+import dracula, { veganDracula, styles } from "./js/theme";
 import "./styles/font-face.css"
 
 export const theme = dracula;
 
-# Hello 👋
+<SlideLayout style={styles.heroSlide}>
 
-You are using [MDX Deck](https://github.com/jxnblk/mdx-deck) and [Code Surfer](https://codesurfer.pomb.us)
+# Welcome to the state jungle, Pt.1
+
+<br />
+
+<div style={{ textAlign: "right" }}>
+  Andrés Osorio
+</div>
+
+</SlideLayout>
+
+--------
+
+<SlideLayout>
+
+## Remember this?
+
+[https://koogv.sse.codesandbox.io/0](https://koogv.sse.codesandbox.io/0)
+
+</SlideLayout>
+
+--------
+
+<SlideLayout style={styles.heroSlide}>
+
+![Rabbit hole](https://media.giphy.com/media/3o6fJgEOrF1lky8WFa/giphy.gif?cid=ecf05e47qi385euqxbhavu22gd29tql3b2fuzhlmfxl0yfpu&rid=giphy.gif&ct=g)
+
+This effectively sent me through a murky Rabbit hole. It had me asking...
+
+</SlideLayout>
+
+---------
+
+<SlideLayout>
+
+## How do you even manage state in 2021?
+
+</SlideLayout>
+
+---------
+
+<SlideLayout>
+
+## Back in my day (and maybe yours too)...
+
+![Redux](https://redux.js.org/img/redux-logo-landscape.png)
+
+He was the winner 👆. Everyone and their grandmothers adopted it. It was a revolution.
+
+</SlideLayout>
+
+-----------
+
+<SlideLayout>
+
+## But why?
+
+Redux had such a success because:
+
+1. A single source of truth
+2. Modularity is achieved through reducer composition.
+3. Predictable updates. Store listeners are only notified once state has been fully updated.
+4. Easy to persist, debug, and hydrate the state.
+
+</SlideLayout>
+
+-----------
+
+<SlideLayout>
+
+### 1. A single source of truth
+
+Translated into a single store for state. It's easy to manage and reason about.
+
+</SlideLayout>
