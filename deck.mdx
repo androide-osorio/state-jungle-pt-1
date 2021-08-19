@@ -67,21 +67,156 @@ He was the winner 👆. Everyone and their grandmothers adopted it. It was a rev
 
 ## But why?
 
-Redux had such a success because:
-
-1. A single source of truth
-2. Modularity is achieved through reducer composition.
-3. Predictable updates. Store listeners are only notified once state has been fully updated.
-4. Easy to persist, debug, and hydrate the state.
-
 </SlideLayout>
 
 -----------
+
+<SurferLayout>
+
+<CodeSurferColumns themes={[veganDracula, veganDracula]} sizes={[1,1]}>
+
+<Step>
 
 <SlideLayout>
 
 ### 1. A single source of truth
 
-Translated into a single store for state. It's easy to manage and reason about.
+Translated into a single store for state. It's easy to manage and reason about, and it's just a plain Javascript object.
+
+</SlideLayout>
+
+```jsx
+// everything is here. EVERY THING!
+const initialState = {
+  user: {
+    firstName: "...",
+    lastName: "..."
+  },
+  questions: [
+    { id: "tn13q4g4p1894tu", ... },
+    { id: "lkj34tu98058t45", ... },
+  ]
+}
+```
+
+</Step>
+
+<Step>
+
+<SlideLayout>
+
+## 2. Modularity is achieved through composition
+
+The nice thing about it is that it's just plain-old simple function composition. It's a great way to modularize a big single store that would otherwise be unmanageable.
+
+</SlideLayout>
+
+```jsx
+import { createStore } from 'redux'
+
+// everything is here. EVERY THING!
+const initialState = {
+  user: {
+    firstName: "...",
+    lastName: "..."
+  },
+  questions: [
+    { id: "tn13q4g4p1894tu", ... },
+    { id: "lkj34tu98058t45", ... },
+  ]
+}
+
+const userReducer = (state = {}, action) => {
+  //...
+}
+
+const questionsReducer = (state = {}, action) => {
+
+}
+
+const rootReducer = combineReducers({
+  users: userReducer,
+  questions: questionsReducer,
+  ...
+});
+
+const store = createStore(rootReducer)
+```
+
+</Step>
+
+<Step>
+
+<SlideLayout>
+
+## 3. Predictable updates
+
+Every observer of a certain portion of the state is only notified once the state has been fully updated.
+
+</SlideLayout>
+
+```jsx
+import React from 'react'
+import { createStore } from 'redux'
+import { useSelector, useDispatch } from 'react-redux'
+
+// everything is here. EVERY THING!
+const initialState = {
+  user: {
+    firstName: "...",
+    lastName: "..."
+  },
+  questions: [
+    { id: "tn13q4g4p1894tu", ... },
+    { id: "lkj34tu98058t45", ... },
+  ]
+}
+
+const userReducer = (state = {}, action) => {
+  //...
+}
+
+const questionsReducer = (state = {}, action) => {
+
+}
+
+const rootReducer = combineReducers({
+  users: userReducer,
+  questions: questionsReducer,
+  ...
+});
+
+const store = createStore(rootReducer)
+
+const MyComponent = () => {
+  // only gets rerendered AFTER user's first name is updated
+  const myFirstName = useSelector(state => state.user.firstName);
+
+  return (
+    <h1>I am {myFirstName}</h1>
+  )
+}
+```
+
+</Step>
+
+</CodeSurferColumns>
+
+</SurferLayout>
+
+------------------
+
+<SlideLayout>
+
+### So, problem solved, right?...
+
+<img src="https://external-preview.redd.it/E6nPCv7F8_oujVdddPvWNTvv27763pq9fk7h2b6JaRw.jpg?auto=webp&s=41feae0f5299bfc49aadc00fa1b7855cb93f0464" width="400px" />
+
+</SlideLayout>
+
+------------------
+
+<SlideLayout>
+
 
 </SlideLayout>
