@@ -6156,6 +6156,11 @@
   "resolved" "https://registry.npmjs.org/ignore/-/ignore-5.1.4.tgz"
   "version" "5.1.4"
 
+"immer@^9.0.5":
+  "integrity" "sha512-2WuIehr2y4lmYz9gaQzetPR2ECniCifk4ORaQbU3g5EalLt+0IVTosEPJ5BoYl/75ky2mivzdRzV8wWgQGOSYQ=="
+  "resolved" "https://registry.npmjs.org/immer/-/immer-9.0.5.tgz"
+  "version" "9.0.5"
+
 "immutable@~3.7.6":
   "integrity" "sha1-E7TTyxK++hVIKib+Gy665kAHHks="
   "resolved" "https://registry.npmjs.org/immutable/-/immutable-3.7.6.tgz"
